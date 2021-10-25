@@ -1,0 +1,92 @@
+Copying tests/userprog/read-boundary to scratch partition...
+Copying ../../tests/userprog/sample.txt to scratch partition...
+warning: can't find squish-pty, so terminal input will fail
+bochs -q
+PiLo hda1
+Loading............
+Kernel command line: -q -f extract run read-boundary
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+Calibrating timer...  159,000 loops/s.
+hda: 13,104 sectors (6 MB), model "BXHD00011", serial "Generic 1234"
+hda1: 192 sectors (96 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 110 sectors (55 kB), Pintos scratch (22)
+hda4: 8,192 sectors (4 MB), Pintos swap (23)
+filesys: using hda2
+scratch: using hda3
+swap: using hda4
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch device into file system...
+Putting 'read-boundary' into the file system...
+Putting 'sample.txt' into the file system...
+Erasing ustar archive...
+Executing 'read-boundary':
+
+fault_addr: 0x8048920
+Not present: 1
+Write: 0
+User: 1
+Lazy Loading ...
+
+fault_addr: 0x804ec20
+Not present: 1
+Write: 1
+User: 1
+Lazy Loading ...
+
+fault_addr: 0x804c6c0
+Not present: 1
+Write: 0
+User: 1
+Lazy Loading ...
+
+fault_addr: 0x8049640
+Not present: 1
+Write: 0
+User: 1
+Lazy Loading ...
+
+fault_addr: 0x804b09d
+Not present: 1
+Write: 0
+User: 1
+Lazy Loading ...
+
+fault_addr: 0x804a8d4
+Not present: 1
+Write: 0
+User: 1
+Lazy Loading ...
+(read-boundary) begin
+(read-boundary) open "sample.txt"
+lazy loading?
+Lazy Loading ...
+2
+Frame: 0xc0288000
+Frame: 0xc0288000
+3
+4
+2
+Frame: 0xc0283000
+Frame: 0xc0283000
+3
+4
+(read-boundary) end
+read-boundary: exit(0)
+Execution of 'read-boundary' complete.
+Timer: 437 ticks
+Thread: 30 idle ticks, 277 kernel ticks, 133 user ticks
+hda2 (filesys): 94 reads, 226 writes
+hda3 (scratch): 109 reads, 2 writes
+hda4 (swap): 0 reads, 0 writes
+Console: 1635 characters output
+Keyboard: 0 keys pressed
+Exception: 6 page faults
+Powering off..========================================================================
+                       Bochs x86 Emulator 2.6.2
+                Built from SVN snapshot on May 26, 2013
+                  Compiled on Sep  2 2019 at 22:33:07
+========================================================================
